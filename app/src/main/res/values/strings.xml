@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Practicum Practice</string>
+    <string name="AppName">Weekly Weather Forecast</string>
+    <string name="button">Main Screen</string>
+    <string name="exitButton">Exit</string>
+    <string name="clearButton">Clear</string>
+    <string name="calculateAverage">Calculate</string>
+    <string name="detailedScreen">Detailed-Screen</string>
+    <string name="aveHighTemp">Average High Temperature for the week:</string>
+    <string name="aveLowTemp">Average Low Temperature for the week:</string>
+    <string name="prompt1">Enter the minimum temperature:</string>
+    <string name="prompt2">Enter the maximum temperature:</string>
+    <string name="enterButton">Enter</string>
+    <string name="nameStudentNumber">Dumisani Mbele - ST10437163</string>
+    <string name="mainScreen">Main Screen</string>
+</resources>
