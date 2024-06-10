@@ -12,13 +12,12 @@ class MainScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_screen)
 
-
+// The buttons are imported and called into this section so that functions are assigned to the buttons when they are pressed
         val detailScreenButton = findViewById<Button>(R.id.detailScreen)
         val enterButton = findViewById<Button>(R.id.enter)
         val clearButton = findViewById<Button>(R.id.clear)
         val calculateButton = findViewById<Button>(R.id.calculate)
         val exitButton = findViewById<Button>(R.id.exit)
-
 
         var lowAveTextView = findViewById<TextView>(R.id.lowAVE)
         var highAveTextView = findViewById<TextView>(R.id.highAVE)
@@ -56,12 +55,16 @@ class MainScreen : AppCompatActivity() {
         var lowAverageTemp: Int
         var highAverageTemp: Int
 
+        // the enter button is being initialized
         enterButton.setOnClickListener {
 
 
 
-
+// the while loop is initialized
             while (counter < 7) {
+
+                // the flag determines which message isi displayed to the user
+                // the if statements allow the user to know which day they are entering information for
                 if (flag == 1) {
                     mondayMIN = lowTemp.toString().toInt()
                     mondayHIGH = maxTemp.toString().toInt()
@@ -92,6 +95,7 @@ class MainScreen : AppCompatActivity() {
                     sundayHIGH = maxTemp.toString().toInt()
                     dayInTheWeek.text = "You have entered Sunday's temperature"
                 } else if (counter == 7) {
+                    // once the counter reaches 7, then that means the whole weeks data has been recorded, then the average temperature will then be calculated below
                     lowAverageTemp = ( mondayMIN + tuesdayMIN + wednesdayMIN + thursdayMIN + fridayMIN + saturdayMIN + sundayMIN )/7
                     highAverageTemp = (mondayHIGH + tuesdayHIGH + wednesdayHIGH + thursdayHIGH + fridayHIGH + saturdayHIGH + sundayHIGH)/7
 
@@ -99,6 +103,7 @@ class MainScreen : AppCompatActivity() {
 
                 counter++
                 flag++
+                // the flag and the counter increments once the button is pressed
             }
 
         }
@@ -114,7 +119,7 @@ class MainScreen : AppCompatActivity() {
 
 
         }
-
+// the application closes once the exit button is pressed
         exitButton.setOnClickListener {
             val intent = Intent(this, MainScreen::class.java)
             finish()
@@ -129,6 +134,8 @@ class MainScreen : AppCompatActivity() {
             highAveTextView.text = null
             flag = 1
             counter = 0
+
+            // the clear button resets all of the information in the main screen allowing the user to start from scratch with the weekly temperature information
         }
 
 
